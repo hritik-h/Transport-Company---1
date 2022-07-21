@@ -5,6 +5,9 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+.btn, .btn-default{
+	background-color: white;
+}
 .sidebar{
   position: fixed;
   top: 0;
@@ -268,6 +271,17 @@
 	font-size: 120px;
 }
 
+.bi-search{
+	font-size: 120px;
+}
+
+.bi-view-stacked{
+	font-size: 120px;
+}
+
+.bi-app{
+	font-size: 120px;
+}
 .card{
 	/*text-align: center;*/
 }

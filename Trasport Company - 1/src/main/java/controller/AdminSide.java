@@ -16,4 +16,9 @@ public class AdminSide extends HttpServlet {
 		 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/AdminSidebar.jsp");
 		 dispatcher.forward(request, response);
 	 }
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+		System.out.println(request.getAttributeNames());
+		System.out.println(request.getParameter("vehicle-description"));		
+	}
 }
+

@@ -45,7 +45,7 @@
         <div class="iocn-link">
           <a href="javascript:void(0);">
             <i class='bx bxs-truck' ></i>
-            <span class="vehicle-db">Vehicles DB</span>
+            <span class="link_name vehicle-db">Vehicles DB</span>
           </a>
           <i class='bx bxs-chevron-down arrow' ></i>
         </div>
@@ -68,31 +68,16 @@
       <li>
         <a href="javascript:void(0);">
           <i class='bx bx-book' ></i>
-          <span class="booking-db">Bookings</span>
+          <span class="link_name booking-db">Bookings</span>
         </a>
         <ul class="sub-menu blank">
           <li><a class="link_name" href="#">Chart</a></li>
         </ul>
       </li>
       <li>
-        <div class="iocn-link">
-          <a href="#">
-            <i class='bx bx-plug' ></i>
-            <span class="link_name">Plugins</span>
-          </a>
-          <i class='bx bxs-chevron-down arrow' ></i>
-        </div>
-        <ul class="sub-menu">
-          <li><a class="link_name" href="#">Plugins</a></li>
-          <li><a href="#">UI Face</a></li>
-          <li><a href="#">Pigments</a></li>
-          <li><a href="#">Box Icons</a></li>
-        </ul>
-      </li>
-      <li>
         <a href="javascript:void(0);">
           <i class='bx bxs-user-rectangle' ></i>
-          <span class="owner-db">Vehicle Owners</span>
+          <span class="link_name owner-db">Vehicle Owners</span>
         </a>
         <ul class="sub-menu blank">
           <li><a class="link_name" href="#">Explore</a></li>
@@ -107,16 +92,6 @@
           <li><a class="link_name" href="#">History</a></li>
         </ul>
       </li>
-      <li>
-        <a href="#">
-          <i class='bx bx-cog' ></i>
-          <span class="link_name">Setting</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Setting</a></li>
-        </ul>
-      </li>
-      <li>
     <div class="profile-details">
       <div class="profile-content">
         <!--<img src="image/profile.jpg" alt="profileImg">-->

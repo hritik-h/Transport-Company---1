@@ -15,7 +15,9 @@
     <div class="col-sm">
       <div class="card" style="width: 18rem; height: 18rem">
       <div class="card-element">
+      	<button type="button" class="btn" data-toggle="modal" data-target="#bookModal">
       	<i class='bx bx-plus-medical'></i>
+      	</button>
       	<h3>Book</h3>
       </div>
       </div>
@@ -23,7 +25,9 @@
     <div class="col-sm">
       <div class="card" style="width: 18rem; height: 18rem">
       <div class="card-element">
+      	<button type="button" class="btn" data-toggle="modal" data-target="#cancelModal">
 	      <i class="bi bi-tools"></i>
+	     </button>
 	      <h3>Cancel Booking</h3>
       </div>
       </div>
