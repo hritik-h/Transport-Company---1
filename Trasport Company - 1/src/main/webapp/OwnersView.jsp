@@ -22,7 +22,7 @@
       <button type="button" class="btn btn-default" data-toggle="modal" data-target="#addModal">
       	<i class='bx bx-plus-medical' ></i>
       </button>
-      <h3>Add Owner</h3>
+      <h3>Add Driver</h3>
       </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
       <button type="button" class="btn" data-toggle="modal" data-target="#editModal">
 	      <i class="bi bi-tools"></i>
       </button>
-      <h3>Edit Owner</h3>
+      <h3>Edit Driver</h3>
       </div>
       </div>
       
@@ -57,7 +57,7 @@
 	      	<i class="bi bi-search"></i>
 	      	
 	    </button>
-	    <h3>view Owner</h3>
+	    <h3>view Driver</h3>
       </div>
       </div>
     </div>
@@ -65,7 +65,7 @@
       <div class="card" style="width: 18rem; height: 18rem">
       <div class="card-element">
       <i class="bi bi-view-stacked"></i>
-      <h3>View Owner</h3>
+      <h3>View Driver</h3>
       </div>
       </div>
       
@@ -89,7 +89,7 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Add Owner</h4>
+        <h4 class="modal-title">Add Driver</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">

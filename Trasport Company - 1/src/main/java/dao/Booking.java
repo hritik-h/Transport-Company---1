@@ -1,10 +1,31 @@
 package dao;
 
+import java.sql.Date;
+
 public class Booking {
+	@Override
+	public String toString() {
+		return "Booking [user_id=" + user_id + ", vehicle_id=" + vehicle_id + ", source=" + source + ", destination="
+				+ destination + ", driverId=" + driverId + ", date=" + date + "]";
+	}
 	int user_id;
 	String vehicle_id;
 	String source;
 	String destination;
+	int driverId;
+	public int getDriverId() {
+		return driverId;
+	}
+	public void setDriverId(int driverId) {
+		this.driverId = driverId;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	Date date;
 	public int getUser_id() {
 		return user_id;
 	}
@@ -28,5 +49,17 @@ public class Booking {
 	}
 	public void setDestination(String destination) {
 		this.destination = destination;
+	}
+	public Booking(int user_id, String vehicle_id, String source, String destination, int driverId, Date date) {
+		super();
+		this.user_id = user_id;
+		this.vehicle_id = vehicle_id;
+		this.source = source;
+		this.destination = destination;
+		this.driverId = driverId;
+		this.date = date;
+	}
+	public Booking() {
+		// TODO Auto-generated constructor stub
 	}
 }

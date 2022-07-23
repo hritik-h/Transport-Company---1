@@ -64,7 +64,7 @@
     <div class="col-sm">
       <div class="card" style="width: 18rem; height: 18rem">
       <div class="card-element">
-      <i class="bi bi-view-stacked"></i>
+      <i class="bi bi-view-stacked" id="view-users"></i>
       <h3>View Users</h3>
       </div>
       </div>
@@ -239,5 +239,12 @@
   </div>
 </div>
 </div>
+  <script>
+  	$(document).ready(function(){
+  		$("#view-users").click(function(){
+  			$('#dashboard').load('list-users.jsp');
+  		});
+  	});
+  </script>
 </body>
 </html>

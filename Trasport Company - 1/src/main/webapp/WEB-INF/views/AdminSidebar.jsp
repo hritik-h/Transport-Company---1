@@ -36,9 +36,9 @@
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Category</a></li>
-          <li><a href="#">HTML & CSS</a></li>
-          <li><a href="#">JavaScript</a></li>
-          <li><a href="#">PHP & MySQL</a></li>
+          <li><a href="#">Add</a></li>
+          <li><a href="#">Update</a></li>
+          <li><a href="#">Delete</a></li>
         </ul>
       </li>
       <li>
@@ -50,10 +50,10 @@
           <i class='bx bxs-chevron-down arrow' ></i>
         </div>
         <ul class="sub-menu">
-          <li><a class="link_name" href="#">Posts</a></li>
-          <li><a href="#">Web Design</a></li>
-          <li><a href="#">Login Form</a></li>
-          <li><a href="#">Card Design</a></li>
+          <li><a class="link_name" href="#">use cases</a></li>
+          <li><a href="#">Add</a></li>
+          <li><a href="#">Update</a></li>
+          <li><a href="#">Delete</a></li>
         </ul>
       </li>
       <li>
@@ -62,7 +62,7 @@
           <span class="link_name manager-db">Managers DB</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Analytics</a></li>
+          <li><a class="link_name" href="#">use case -1</a></li>
         </ul>
       </li>
       <li>
@@ -71,13 +71,13 @@
           <span class="link_name booking-db">Bookings</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Chart</a></li>
+          <li><a class="link_name" href="#">View</a></li>
         </ul>
       </li>
       <li>
         <a href="javascript:void(0);">
           <i class='bx bxs-user-rectangle' ></i>
-          <span class="link_name owner-db">Vehicle Owners</span>
+          <span class="link_name owner-db">Driver DB</span>
         </a>
         <ul class="sub-menu blank">
           <li><a class="link_name" href="#">Explore</a></li>

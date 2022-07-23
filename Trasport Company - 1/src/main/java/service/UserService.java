@@ -88,8 +88,13 @@ public class UserService implements UserCrud {
 		//Add all Records in ArrayList		
 						
 		while(rs.next()) {
-			
-			list.add(new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getInt(5)));
+			System.out.println(rs.getInt(1));
+			System.out.println(rs.getString(2));
+			System.out.println(rs.getString(3));
+			System.out.println(rs.getString(4));
+			System.out.println(rs.getString(5));
+			System.out.println(rs.getInt(6));
+			list.add(new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getInt(6)));
 			//Student student=new Student(rs.getInt(1),rs.getString(2),rs.getDate(3));
 			//list.add(student);
 					
@@ -100,6 +105,7 @@ public class UserService implements UserCrud {
 		catch(Exception e){
 			e.printStackTrace();
 		}
+		
 		return list;
 	}
 

@@ -64,7 +64,7 @@
     <div class="col-sm">
       <div class="card" style="width: 18rem; height: 18rem">
       <div class="card-element">
-      <i class="bi bi-view-stacked"></i>
+      <i class="bi bi-view-stacked" id="view-vehicles"></i>
       <h3>view Vehicles</h3>
       </div>
       </div>
@@ -227,5 +227,12 @@
 
   </div>
 </div>
+  <script>
+  	$(document).ready(function(){
+  		$("#view-vehicles").click(function(){
+  			$('#dashboard').load('list-vehicles.jsp');
+  		});
+  	});
+  </script>
 </body>
 </html>
