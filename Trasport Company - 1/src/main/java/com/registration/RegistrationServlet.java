@@ -14,62 +14,60 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.User;
+import service.UserService;
+
 /**
  * Servlet implementation class RegistrationServlet
  */
 @WebServlet("/register")
 public class RegistrationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	User user = new User();
+	UserService userService = new UserService();
   
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String uname=request.getParameter("name");
-		String uemail=request.getParameter("email");
-		String upassword=request.getParameter("pass");
-		String reupassword=request.getParameter("re_pass");
-		String umobile=request.getParameter("contact");
+		user.setId(0);
+		user.setFirstName(request.getParameter("first-name"));
+		user.setLastName(request.getParameter("last-name"));
+		user.setUname(request.getParameter("username"));
+		user.setPassword(request.getParameter("password"));
+		user.setContactno(Integer.parseInt(request.getParameter("contact-number")));
 		RequestDispatcher dispatcher=null;
-		Connection con=null;
 		
-		if(uname==null || uname.equals("")) {
+		if(request.getParameter("first-name")==null || request.getParameter("last-name").equals("")) {
 			request.setAttribute("status","invalidName");
 			dispatcher=request.getRequestDispatcher("registration.jsp");
 			dispatcher.forward(request, response);
 		}
-		if(uemail==null || uemail.equals("")) {
-			request.setAttribute("status","invalidEmail");
+		if(request.getParameter("username")==null || request.getParameter("username").equals("")) {
+			request.setAttribute("status","invalidUserName");
 			dispatcher=request.getRequestDispatcher("registration.jsp");
 			dispatcher.forward(request, response);
 		}
-		if(upassword==null || upassword.equals("")) {
+		if(request.getParameter("password")==null || request.getParameter("password").equals("")) {
 			request.setAttribute("status","invalidPassword");
 			dispatcher=request.getRequestDispatcher("registration.jsp");
 			dispatcher.forward(request, response);
-		}else if(!upassword.equals(reupassword)){
+		}else if(!request.getParameter("password").equals(request.getParameter("re_pass"))){
 			request.setAttribute("status","invalidConfirmPassword");
 			dispatcher=request.getRequestDispatcher("registration.jsp");
 			dispatcher.forward(request, response);
 		}
-		if(umobile==null || umobile.equals("")) {
+		if(request.getParameter("contact-number")==null || request.getParameter("contact-number").equals("")) {
 			request.setAttribute("status","invalidMobile");
 			dispatcher=request.getRequestDispatcher("registration.jsp");
 			dispatcher.forward(request, response);
 			
-		}else if(umobile.length()>10) {
+		}else if(request.getParameter("contact-number").length()>10) {
 			request.setAttribute("status","invalidMobileLength");
 			dispatcher=request.getRequestDispatcher("registration.jsp");
 			dispatcher.forward(request, response);
 		}
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/sys?autoReconnect=true&useSSL=false", "root","root");
-			PreparedStatement pst=con.prepareStatement("insert into users(uname,upassword,uemail,umobile) values(?,?,?,?)");
-			pst.setString(1, uname);
-			pst.setString(2, upassword);
-			pst.setString(3, uemail);
-			pst.setString(4, umobile);
-			int rowCount=pst.executeUpdate();
+			
+			int rowCount=userService.insertRecord(user);;
 			dispatcher = request.getRequestDispatcher("registration.jsp");
 			if (rowCount>0) {
 				request.setAttribute("status","success");
@@ -81,13 +79,6 @@ public class RegistrationServlet extends HttpServlet {
 			
 		}catch (Exception e) {
 			e.printStackTrace();
-		}finally {
-			try {
-				con.close();
-			} catch (SQLException e) {
-				
-				e.printStackTrace();
-			}
 		}
 		
 	}

@@ -15,21 +15,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import service.LoginService;
+
 /**
  * Servlet implementation class Login
  */
 @WebServlet("/login")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    LoginService loginService = new LoginService();
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String uemail = request.getParameter("username");
+		String uname = request.getParameter("username");
 		String upassword = request.getParameter("password");
 		HttpSession session=request.getSession();
 		RequestDispatcher dispatcher=null;
 		
-		if(uemail==null || uemail.equals("")) {
+		if(uname==null || uname.equals("")) {
 			request.setAttribute("status","invalidEmail");
 			dispatcher=request.getRequestDispatcher("login.jsp");
 			dispatcher.forward(request, response);
@@ -41,18 +43,14 @@ public class Login extends HttpServlet {
 		}
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/sys?autoReconnect=true&useSSL=false", "root","root");
-			PreparedStatement pst=con.prepareStatement("select * from users where uemail = ? and upassword = ?");
-			pst.setString(1, uemail);
-			pst.setString(2, upassword);
 			
-			ResultSet rs=pst.executeQuery();
+			
+			Boolean rs=loginService.login(uname, upassword);
 			
 			
 			
-			if (rs.next()) {
-				session.setAttribute("name",rs.getString("uname"));
+			if (rs == true) {
+				session.setAttribute("name",uname);
 				dispatcher=request.getRequestDispatcher("index.jsp");
 				
 			}else {

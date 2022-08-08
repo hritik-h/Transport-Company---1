@@ -41,7 +41,12 @@ public class VehicleHandler extends HttpServlet {
 			vehicleService.insertRecord(vehicle);
 		}
 		else if(request.getParameter("action").equals("update")) {
-			
+			vehicle.setVehicle_id(request.getParameter("vehicle-id"));
+			vehicle.setVehicle_customer_id(Integer.parseInt(request.getParameter("vehicle-owner")));
+			vehicle.setVehicle_desription(request.getParameter("vehicle-description"));
+			vehicle.setVehicle_number(Integer.parseInt(request.getParameter("vehicle-number")));
+			vehicle.setVehicle_type(request.getParameter("vehicle-type"));
+			vehicleService.updateRecord(vehicle);
 		}
 		else if(request.getParameter("action").equals("delete")) {
 			System.out.println("inside delete: "+request.getParameter("vehicle-id"));

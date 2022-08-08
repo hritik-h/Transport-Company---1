@@ -134,45 +134,34 @@
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Add Owner</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="input-group input-group-sm mb-3">
-  			<div class="input-group-prepend">
-    			<span class="input-group-text" id="inputGroup-sizing-sm">First Name</span>
-  			</div>
-  			<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-		</div>
-		
-		<div class="input-group input-group-sm mb-3">
-  			<div class="input-group-prepend">
-    			<span class="input-group-text" id="inputGroup-sizing-sm">Last Name</span>
-  			</div>
-  			<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-		</div>
-		
-		<div class="input-group input-group-sm mb-3">
-  			<div class="input-group-prepend">
-    			<span class="input-group-text" id="inputGroup-sizing-sm">Username</span>
-  			</div>
-  			<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-		</div>
-		
-		<div class="input-group input-group-sm mb-3">
-  			<div class="input-group-prepend">
-    			<span class="input-group-text" id="inputGroup-sizing-sm">Password&nbsp;</span>
-  			</div>
-  			<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-		</div>
-		
-		<div class="input-group input-group-sm mb-3">
-  			<div class="input-group-prepend">
-    			<span class="input-group-text" id="inputGroup-sizing-sm">Contact&emsp;&nbsp;</span>
-  			</div>
-  			<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-		</div>
+       <form action="DriverHandler" method="post">
+        	<input type="hidden" id="custId" name="action" value="update">
+        	<div class="form-group" id="update-form">
+			    <label for="first-name">Driver Id</label>
+			    <input type="number" class="form-control" id="driver-id" aria-describedby="emailHelp" name = "driver-id" placeholder="Driver Id">
+			  </div>	
+			  <div class="form-group" id="add-form">
+			    <label for="first-name">First Name</label>
+			    <input type="text" class="form-control" id="vehicle-id" aria-describedby="emailHelp" name = "first-name" placeholder="First Name">
+			  </div>
+			  <div class="form-group">
+			    <label for="last-name">Last Name</label>
+			    <input type="text" name = "last-name" class="form-control" id="last-name" placeholder="Last Name">
+			  </div>
+			  <div class="form-group">
+			    <label for="username">Username</label>
+			    <input type="text" name = "username" class="form-control" id="username" placeholder="Username">
+			  </div>
+			  <div class="form-group">
+			    <label for="password">Password</label>
+			    <input type="password" name = "password" class="form-control" id="password" placeholder="Password">
+			  </div>
+			  <div class="form-group">
+			    <label for="contact-number">Contact Number</label>
+			    <input type="number" name = "contact-number" class="form-control" id="contact-number" placeholder="Contact Number">
+			  </div>
+			  <button type="submit" class="btn btn-primary" id="submit-add">Submit</button>
+			</form>
 		
       </div>
       <div class="modal-footer">

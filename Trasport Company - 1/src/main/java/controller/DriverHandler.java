@@ -44,7 +44,13 @@ public class DriverHandler extends HttpServlet {
 			driverService.insertRecord(user);
 		}
 		else if(request.getParameter("action").equals("update")) {
-			
+			user.setId(Integer.parseInt(request.getParameter("driver-id")));
+			user.setFirstName(request.getParameter("first-name"));
+			user.setLastName(request.getParameter("last-name"));
+			user.setUname(request.getParameter("username"));
+			user.setPassword(request.getParameter("password"));
+			user.setContactno(Integer.parseInt(request.getParameter("contact-number")));
+			driverService.updateRecord(user);
 		}
 		else if(request.getParameter("action").equals("delete")) {
 			System.out.println("inside delete: "+request.getParameter("user-id"));
